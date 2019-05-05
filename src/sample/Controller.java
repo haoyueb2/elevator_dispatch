@@ -1,38 +1,49 @@
 package sample;
 
-import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Controller {
     public ChoiceBox floorChoice;
     public ChoiceBox elevatorChoice;
     public AnchorPane root;
-    private Button[] insideFloorButton;
+    public Button[] insideFloorButtons = new Button[21];
+    public Elevator[] elevators = new Elevator[6];
+    public Slider[] elevatorSliders = new Slider[6];
     private void initInsideFloorButton() {
         //目的是从1到20，把0空出来
-        insideFloorButton = new Button[21];
+
         for(int i = 1; i <= 10; i++) {
-            insideFloorButton[i] = (Button)root.lookup("#floor"+i);
-            if(insideFloorButton[i] != null) {
+            insideFloorButtons[i] = (Button)root.lookup("#floor"+i);
+            if(insideFloorButtons[i] != null) {
                 final int iFinal = i;
-                insideFloorButton[i].setOnAction((event) -> {
-                    insideFloorButton[iFinal].setText(Integer.toString(iFinal*2));
+                insideFloorButtons[i].setOnAction((event) -> {
+                    insideFloorButtons[iFinal].setStyle("-fx-background-color:#5264AE;");
+                    String elevatorChoiceValue = (String)elevatorChoice.getValue();
+                    int elevatorIndex = elevatorChoiceValue.charAt(8)-'0';
+                    if(elevators[elevatorIndex].status == Elevator.PAUSE || elevators[elevatorIndex].status == Elevator.UP) {
+                        elevators[elevatorIndex].upQueue.add(iFinal);
+                    }
                 });
             }
 
         }
     }
     public void initialize() {
+        elevatorChoice.setValue("elevator1");
         initInsideFloorButton();
+        for(int i = 1; i <= 5; i++) {
+            elevatorSliders[i] = (Slider)root.lookup("#slider"+i);
+            elevatorSliders[i].setMin(1);
+            elevatorSliders[i].setMax(20);
+
+        }
+        for(int i = 1; i <= 5;i++){
+            elevators[i] = new Elevator(i, this);
+            new Thread(elevators[i]).start();
+        }
     }
 
 }
