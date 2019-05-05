@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox layoutX="652.0" layoutY="29.0" prefHeight="484.0" prefWidth="220.0" spacing="30.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="652.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="29.0">
+         <children>
+            <Slider orientation="VERTICAL" />
+            <Slider orientation="VERTICAL" />
+            <Slider orientation="VERTICAL" />
+            <Slider orientation="VERTICAL" />
+            <Slider orientation="VERTICAL" />
+         </children>
+      </HBox>
+      <ChoiceBox fx:id="floorChoice" layoutX="105.0" layoutY="459.0" prefWidth="150.0">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="floor1" />
+              </FXCollections>
+          </items>
+      </ChoiceBox>
+      <VBox layoutX="105.0" layoutY="505.0" prefHeight="74.0" prefWidth="273.0">
+         <children>
+            <HBox prefHeight="42.0" prefWidth="274.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+               </children>
+            </HBox>
+            <HBox prefHeight="42.0" prefWidth="274.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox layoutX="652.0" layoutY="598.0" prefHeight="32.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Label prefHeight="15.0" prefWidth="50.0" text="1" />
+            <Label prefHeight="15.0" prefWidth="50.0" text="1" />
+            <Label prefHeight="15.0" prefWidth="50.0" text="1" />
+            <Label prefHeight="15.0" prefWidth="50.0" text="1" />
+            <Label prefHeight="15.0" prefWidth="50.0" text="1" />
+         </children>
+      </HBox>
+      <ChoiceBox fx:id="elevatorChoice" layoutX="105.0" layoutY="88.0" prefWidth="150.0">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="elevator1" />
+                  <String fx:value="elevator2" />
+                  <String fx:value="elevator3" />
+                  <String fx:value="elevator4" />
+                  <String fx:value="elevator5" />
+              </FXCollections>
+          </items>
+      </ChoiceBox>
+      <GridPane layoutX="105.0" layoutY="155.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="floor1" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="1" />
+            <Button fx:id="floor2" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="2" GridPane.columnIndex="1" />
+            <Button fx:id="floor3" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="3" GridPane.columnIndex="2" />
+            <Button fx:id="floor4" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="4" GridPane.columnIndex="3" />
+            <Button fx:id="floor5" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="5" GridPane.columnIndex="4" />
+            <Button fx:id="floor6" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="6" GridPane.rowIndex="1" />
+            <Button fx:id="floor7" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="7" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="floor8" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="8" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="floor9" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="9" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="floor10" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="10" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
