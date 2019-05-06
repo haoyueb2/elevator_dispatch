@@ -23,16 +23,22 @@ public class Elevator implements Runnable {
     }
     @Override
     public void run() {
-        System.out.println("run!");
+
         while(true){
+            System.out.println("run!"+ selfElevatorIndex);
             while(upQueue.size() > 0) {
                 status = UP;
+                currentFloor++;
                 if(upQueue.peek() == currentFloor) {
                     upQueue.poll();
-                    Platform.runLater(()->controller.insideFloorButtons[currentFloor].setStyle(null));
+                    //System.out.println("arrive!"+ currentFloor);
+                    controller.insideFloorButtons[currentFloor].setStyle(null);
+                    //Platform.runLater(()->controller.insideFloorButtons[currentFloor].setStyle(null));
                 }
-                currentFloor++;
-                Platform.runLater(()-> controller.elevatorSliders[selfElevatorIndex].setValue(currentFloor));
+
+                System.out.println("run!"+ selfElevatorIndex+"floor:"+selfElevatorIndex);
+                controller.elevatorSliders[selfElevatorIndex].setValue(currentFloor);
+                //Platform.runLater(()-> controller.elevatorSliders[selfElevatorIndex].setValue(currentFloor));
                 try {
                     Thread.sleep(1000);
                 }

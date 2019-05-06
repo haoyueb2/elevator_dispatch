@@ -18,13 +18,20 @@ public class Controller {
         for(int i = 1; i <= 10; i++) {
             insideFloorButtons[i] = (Button)root.lookup("#floor"+i);
             if(insideFloorButtons[i] != null) {
-                final int iFinal = i;
+                final int chosenFloor = i;
                 insideFloorButtons[i].setOnAction((event) -> {
-                    insideFloorButtons[iFinal].setStyle("-fx-background-color:#5264AE;");
+
+
                     String elevatorChoiceValue = (String)elevatorChoice.getValue();
                     int elevatorIndex = elevatorChoiceValue.charAt(8)-'0';
-                    if(elevators[elevatorIndex].status == Elevator.PAUSE || elevators[elevatorIndex].status == Elevator.UP) {
-                        elevators[elevatorIndex].upQueue.add(iFinal);
+                    //请求不是本层才点亮按钮
+                    if(elevators[elevatorIndex].currentFloor != chosenFloor) {
+                        insideFloorButtons[chosenFloor].setStyle("-fx-background-color:#5264AE;");
+                    }
+                    if((elevators[elevatorIndex].status == Elevator.PAUSE || elevators[elevatorIndex].status == Elevator.UP) &&
+                        chosenFloor > elevators[elevatorIndex].currentFloor) {
+
+                        elevators[elevatorIndex].upQueue.add(chosenFloor);
                     }
                 });
             }
