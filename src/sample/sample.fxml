@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <HBox layoutX="652.0" layoutY="29.0" prefHeight="484.0" prefWidth="220.0" spacing="30.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="652.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="29.0">
          <children>
@@ -24,64 +24,16 @@
             <Slider fx:id="slider5" orientation="VERTICAL" />
          </children>
       </HBox>
-      <ChoiceBox fx:id="floorChoice" layoutX="105.0" layoutY="459.0" prefWidth="150.0">
-          <items>
-              <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="floor1" />
-                  <String fx:value="floor2" />
-                  <String fx:value="floor3" />
-                  <String fx:value="floor4" />
-                  <String fx:value="floor5" />
-                  <String fx:value="floor6" />
-                  <String fx:value="floor7" />
-                  <String fx:value="floor8" />
-                  <String fx:value="floor9" />
-                  <String fx:value="floor10" />
-                  <String fx:value="floor11" />
-                  <String fx:value="floor12" />
-                  <String fx:value="floor13" />
-                  <String fx:value="floor14" />
-                  <String fx:value="floor15" />
-                  <String fx:value="floor16" />
-                  <String fx:value="floor17" />
-                  <String fx:value="floor18" />
-                  <String fx:value="floor19" />
-                  <String fx:value="floor20" />
-              </FXCollections>
-          </items>
-      </ChoiceBox>
-      <VBox layoutX="105.0" layoutY="505.0" prefHeight="74.0" prefWidth="273.0">
+      <HBox layoutX="55.0" layoutY="628.0" prefHeight="32.0" prefWidth="200.0" spacing="20.0">
          <children>
-            <HBox prefHeight="42.0" prefWidth="274.0">
-               <children>
-                  <Button fx:id="up1" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
-                  <Button fx:id="up2" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
-                  <Button fx:id="up3" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
-                  <Button fx:id="up4" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
-                  <Button fx:id="up5" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
-               </children>
-            </HBox>
-            <HBox prefHeight="42.0" prefWidth="274.0">
-               <children>
-                  <Button fx:id="down1" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
-                  <Button fx:id="down2" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
-                  <Button fx:id="down3" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
-                  <Button fx:id="down4" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
-                  <Button fx:id="down5" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-      <HBox layoutX="652.0" layoutY="598.0" prefHeight="32.0" prefWidth="200.0" spacing="20.0">
-         <children>
-            <Label fx:id="display1" prefHeight="15.0" prefWidth="50.0" text="1" />
+            <Label fx:id="display2" prefHeight="15.0" prefWidth="50.0" text="1" />
             <Label fx:id="display2" prefHeight="15.0" prefWidth="50.0" text="1" />
             <Label fx:id="display3" prefHeight="15.0" prefWidth="50.0" text="1" />
             <Label fx:id="display4" prefHeight="15.0" prefWidth="50.0" text="1" />
             <Label fx:id="display5" prefHeight="15.0" prefWidth="50.0" text="1" />
          </children>
       </HBox>
-      <ChoiceBox fx:id="elevatorChoice" layoutX="105.0" layoutY="88.0" prefWidth="150.0">
+      <ChoiceBox fx:id="elevatorChoice" layoutX="38.0" layoutY="67.0" prefWidth="150.0">
           <items>
               <FXCollections fx:factory="observableArrayList">
                   <String fx:value="elevator1" />
@@ -92,7 +44,7 @@
               </FXCollections>
           </items>
       </ChoiceBox>
-      <GridPane layoutX="105.0" layoutY="155.0">
+      <GridPane layoutX="20.0" layoutY="119.0" prefHeight="138.0" prefWidth="403.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -129,5 +81,149 @@
             <Button fx:id="floor20" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="20" GridPane.columnIndex="4" GridPane.rowIndex="3" />
          </children>
       </GridPane>
+      <VBox layoutX="473.0" layoutY="24.0" prefHeight="622.0" prefWidth="178.0" spacing="10.0">
+         <children>
+            <HBox prefHeight="2.0" prefWidth="142.0">
+               <children>
+                  <Button fx:id="up20" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down20" mnemonicParsing="false" prefHeight="32.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display20" prefHeight="34.0" prefWidth="46.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up19" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down19" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display19" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up18" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down18" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display18" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up17" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down17" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display17" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up16" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down16" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display16" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up15" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down15" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display15" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up14" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down14" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display14" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up13" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down13" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display13" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up12" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down12" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display12" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up11" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down11" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display11" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up10" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down10" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display10" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up9" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down9" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display9" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up8" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down8" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display8" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up7" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down7" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display7" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up6" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down6" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display6" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up5" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down5" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display5" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up4" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down4" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display4" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up3" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down3" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display3" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up2" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down2" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display2" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0" prefWidth="145.0">
+               <children>
+                  <Button fx:id="up1" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="down1" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
+                  <Label fx:id="display1" prefHeight="28.0" prefWidth="51.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

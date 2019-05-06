@@ -46,6 +46,20 @@ public class Elevator implements Runnable {
         upQueue = new MyPriQueue<>();
         downQueue = new MyPriQueue<>(cmp);
     }
+    //消除try和catch带来的冗余
+    private void mySleep(int time) {
+        try {
+            Thread.sleep(time);
+        }
+        catch(Exception exc){
+            System.out.println("sleep exception!!");
+        }
+    }
+    public void openDoor() {
+        if(this.status == PAUSE ) {
+            mySleep(2000);
+        }
+    }
     @Override
     public void run() {
 
@@ -55,20 +69,19 @@ public class Elevator implements Runnable {
             while(upQueue.size() > 0) {
                 status = UP;
                 currentFloor++;
+                controller.elevatorSliders[selfElevatorIndex].setValue(currentFloor);
                 if(upQueue.peek() == currentFloor) {
                     upQueue.poll();
                     controller.insideFloorButtons[currentFloor].setStyle(null);
+                    controller.outsideUpButtons[currentFloor].setStyle(null);
+                    controller.outsideDownButtons[currentFloor].setStyle(null);
+                    //开门关门2s
+                    mySleep(2000);
                 }
-                controller.elevatorSliders[selfElevatorIndex].setValue(currentFloor);
-                try {
-                    Thread.sleep(1000);
-                }
-                catch(Exception exc){
-                    System.out.println("sleep exception!!");
-                }
+                mySleep(1000);
             }
             while(downQueue.size() > 0) {
-                System.out.println("detectDown!elevator:"+ selfElevatorIndex);
+                System.out.print("");
                 status = DOWN;
                 currentFloor--;
                 if(downQueue.peek() == currentFloor) {
@@ -76,12 +89,7 @@ public class Elevator implements Runnable {
                     controller.insideFloorButtons[currentFloor].setStyle(null);
                 }
                 controller.elevatorSliders[selfElevatorIndex].setValue(currentFloor);
-                try {
-                    Thread.sleep(1000);
-                }
-                catch(Exception exc){
-                    System.out.println("sleep exception!!");
-                }
+                mySleep(1000);
             }
             status = PAUSE;
 
