@@ -50,7 +50,8 @@ public class Elevator implements Runnable {
     public void run() {
 
         while(true){
-            System.out.println("detectUp!elevator:"+ selfElevatorIndex);
+            //加上线程才能运行
+            System.out.print("");
             while(upQueue.size() > 0) {
                 status = UP;
                 currentFloor++;
