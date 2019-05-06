@@ -28,6 +28,25 @@
           <items>
               <FXCollections fx:factory="observableArrayList">
                   <String fx:value="floor1" />
+                  <String fx:value="floor2" />
+                  <String fx:value="floor3" />
+                  <String fx:value="floor4" />
+                  <String fx:value="floor5" />
+                  <String fx:value="floor6" />
+                  <String fx:value="floor7" />
+                  <String fx:value="floor8" />
+                  <String fx:value="floor9" />
+                  <String fx:value="floor10" />
+                  <String fx:value="floor11" />
+                  <String fx:value="floor12" />
+                  <String fx:value="floor13" />
+                  <String fx:value="floor14" />
+                  <String fx:value="floor15" />
+                  <String fx:value="floor16" />
+                  <String fx:value="floor17" />
+                  <String fx:value="floor18" />
+                  <String fx:value="floor19" />
+                  <String fx:value="floor20" />
               </FXCollections>
           </items>
       </ChoiceBox>
@@ -35,20 +54,20 @@
          <children>
             <HBox prefHeight="42.0" prefWidth="274.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="up1" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="up2" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="up3" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="up4" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
+                  <Button fx:id="up5" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                </children>
             </HBox>
             <HBox prefHeight="42.0" prefWidth="274.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
+                  <Button fx:id="down1" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
+                  <Button fx:id="down2" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
+                  <Button fx:id="down3" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
+                  <Button fx:id="down4" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
+                  <Button fx:id="down5" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↓" />
                </children>
             </HBox>
          </children>
@@ -98,6 +117,16 @@
             <Button fx:id="floor8" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="8" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Button fx:id="floor9" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="9" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Button fx:id="floor10" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="10" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="floor11" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="11" GridPane.rowIndex="2" />
+            <Button fx:id="floor12" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="12" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="floor13" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="13" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="floor14" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="14" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button fx:id="floor15" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="15" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button fx:id="floor16" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="16" GridPane.rowIndex="3" />
+            <Button fx:id="floor17" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="17" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="floor18" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="18" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="floor19" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="19" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button fx:id="floor20" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="20" GridPane.columnIndex="4" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>
