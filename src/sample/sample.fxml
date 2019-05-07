@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <HBox layoutX="652.0" layoutY="29.0" prefHeight="484.0" prefWidth="220.0" spacing="30.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="652.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="29.0">
+      <HBox layoutX="704.0" layoutY="29.0" prefHeight="652.0" prefWidth="216.0" spacing="30.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="704.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="29.0">
          <children>
             <Slider fx:id="slider1" orientation="VERTICAL" />
             <Slider fx:id="slider2" orientation="VERTICAL" />
@@ -60,7 +60,7 @@
             <Button fx:id="floor20" mnemonicParsing="false" prefHeight="23.0" prefWidth="87.0" text="20" GridPane.columnIndex="4" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <VBox layoutX="473.0" layoutY="24.0" prefHeight="622.0" prefWidth="178.0" spacing="10.0">
+      <VBox layoutX="483.0" layoutY="24.0" prefHeight="622.0" prefWidth="178.0" spacing="10.0">
          <children>
             <HBox prefHeight="2.0" prefWidth="142.0">
                <children>
@@ -204,7 +204,7 @@
             </HBox>
          </children>
       </VBox>
-      <VBox layoutX="95.0" layoutY="32.0" prefHeight="347.0" prefWidth="290.0">
+      <VBox layoutX="94.0" layoutY="11.0" prefHeight="347.0" prefWidth="290.0">
          <children>
             <HBox prefHeight="65.0" prefWidth="157.0">
                <children>
@@ -258,8 +258,12 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="open" layoutX="32.0" layoutY="543.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" text="开门" />
-      <Button fx:id="alert" layoutX="195.0" layoutY="543.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="78.0" text="报警" />
+      <Button fx:id="open" layoutX="32.0" layoutY="531.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" text="开门" />
+      <Button fx:id="alert" layoutX="194.0" layoutY="531.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="78.0" text="报警" />
       <Label fx:id="alertDisplay" layoutX="32.0" layoutY="579.0" prefHeight="106.0" prefWidth="160.0" />
+      <Label layoutX="25.0" layoutY="-2.0" prefHeight="30.0" prefWidth="138.0" text="选择电梯(对内部按钮)：" />
+      <Label layoutX="37.0" layoutY="344.0" prefHeight="30.0" prefWidth="114.0" text="电梯内部按钮：" />
+      <Label layoutX="483.0" layoutY="-1.0" prefHeight="23.0" prefWidth="178.0" text="各楼层上下行按钮及电梯状态：" />
+      <Label layoutX="704.0" layoutY="-1.0" prefHeight="23.0" prefWidth="160.0" text="各电梯运行状态可视化：" />
    </children>
 </AnchorPane>

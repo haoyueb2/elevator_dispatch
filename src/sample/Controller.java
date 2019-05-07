@@ -60,7 +60,7 @@ public class Controller {
             }
         }
         if(!isExist) {
-            outsideUpButtons[outsideCurFloor].setStyle("-fx-background-color:#5264AE;");
+            outsideUpButtons[outsideCurFloor].setStyle("-fx-background-color:#B0E0E6;");
         }
         int nearestElevatorIndex = 0;
         int minDistance = 100;//先设一个很大的数
@@ -113,7 +113,7 @@ public class Controller {
             }
         }
         if(!isExist) {
-            outsideDownButtons[outsideCurFloor].setStyle("-fx-background-color:#5264AE;");
+            outsideDownButtons[outsideCurFloor].setStyle("-fx-background-color:#B0E0E6;");
         }
         int nearestElevatorIndex = 0;
         int minDistance = 100;//先设一个很大的数
@@ -165,7 +165,7 @@ public class Controller {
         }
         //请求不是本层才点亮按钮
         if(elevators[elevatorIndex].currentFloor != chosenFloor) {
-            insideFloorButtons[chosenFloor].setStyle("-fx-background-color:#5264AE;");
+            insideFloorButtons[chosenFloor].setStyle("-fx-background-color:#B0E0E6;");
         }
         if(chosenFloor > elevators[elevatorIndex].currentFloor) {
 
