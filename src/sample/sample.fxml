@@ -26,11 +26,11 @@
       </HBox>
       <HBox layoutX="55.0" layoutY="628.0" prefHeight="32.0" prefWidth="200.0" spacing="20.0">
          <children>
-            <Label fx:id="display2" prefHeight="15.0" prefWidth="50.0" text="1" />
-            <Label fx:id="display2" prefHeight="15.0" prefWidth="50.0" text="1" />
-            <Label fx:id="display3" prefHeight="15.0" prefWidth="50.0" text="1" />
-            <Label fx:id="display4" prefHeight="15.0" prefWidth="50.0" text="1" />
-            <Label fx:id="display5" prefHeight="15.0" prefWidth="50.0" text="1" />
+            <Label fx:id="eleDisplay2" prefHeight="15.0" prefWidth="50.0" text="1" />
+            <Label fx:id="eleDisplay2" prefHeight="15.0" prefWidth="50.0" text="1" />
+            <Label fx:id="eleDisplay3" prefHeight="15.0" prefWidth="50.0" text="1" />
+            <Label fx:id="eleDisplay4" prefHeight="15.0" prefWidth="50.0" text="1" />
+            <Label fx:id="eleDisplay5" prefHeight="15.0" prefWidth="50.0" text="1" />
          </children>
       </HBox>
       <ChoiceBox fx:id="elevatorChoice" layoutX="38.0" layoutY="67.0" prefWidth="150.0">
@@ -87,140 +87,140 @@
                <children>
                   <Button fx:id="up20" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down20" mnemonicParsing="false" prefHeight="32.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display20" prefHeight="34.0" prefWidth="46.0" />
+                  <Label fx:id="display20" prefHeight="23.0" prefWidth="74.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up19" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down19" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display19" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display19" prefHeight="23.0" prefWidth="74.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up18" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down18" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display18" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display18" prefHeight="23.0" prefWidth="74.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up17" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down17" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display17" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display17" prefHeight="23.0" prefWidth="75.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up16" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down16" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display16" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display16" prefHeight="23.0" prefWidth="76.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up15" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down15" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display15" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display15" prefHeight="23.0" prefWidth="74.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up14" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down14" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display14" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display14" prefHeight="23.0" prefWidth="76.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up13" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down13" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display13" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display13" prefHeight="23.0" prefWidth="77.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up12" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down12" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display12" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display12" prefHeight="23.0" prefWidth="77.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up11" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down11" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display11" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display11" prefHeight="23.0" prefWidth="75.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up10" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down10" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display10" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display10" prefHeight="23.0" prefWidth="75.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up9" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down9" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display9" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display9" prefHeight="23.0" prefWidth="76.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up8" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down8" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display8" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display8" prefHeight="23.0" prefWidth="77.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up7" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down7" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display7" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display7" prefHeight="23.0" prefWidth="74.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up6" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down6" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display6" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display6" prefHeight="23.0" prefWidth="77.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up5" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down5" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display5" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display5" prefHeight="23.0" prefWidth="76.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up4" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down4" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display4" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display4" prefHeight="23.0" prefWidth="76.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up3" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down3" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display3" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display3" prefHeight="23.0" prefWidth="75.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up2" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down2" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display2" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display2" prefHeight="23.0" prefWidth="78.0" />
                </children>
             </HBox>
             <HBox prefHeight="10.0" prefWidth="145.0">
                <children>
                   <Button fx:id="up1" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down1" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
-                  <Label fx:id="display1" prefHeight="28.0" prefWidth="51.0" />
+                  <Label fx:id="display1" prefHeight="23.0" prefWidth="77.0" />
                </children>
             </HBox>
          </children>

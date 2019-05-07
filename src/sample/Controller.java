@@ -2,6 +2,7 @@ package sample;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
 
@@ -14,6 +15,7 @@ public class Controller {
     public Button[] outsideDownButtons = new Button[21];
     public Elevator[] elevators = new Elevator[6];
     public Slider[] elevatorSliders = new Slider[6];
+    public Label[] eachFloorDisplay = new Label[21];
     private void initInsideFloorButtons() {
         //目的是从1到20，把0空出来
         for(int i = 1; i <= 20; i++) {
@@ -86,8 +88,14 @@ public class Controller {
             } else if(outsideCurFloor - elevators[nearestElevatorIndex].currentFloor < 0){
                 elevators[nearestElevatorIndex].downQueue.add(outsideCurFloor);
             } else if(outsideCurFloor - elevators[nearestElevatorIndex].currentFloor == 0) {
-                //电梯开门
+                //up按钮此时只可能调度到UP和PAUSE状态的电梯，UP要加入UpQueue才可以，PAUSE都行所以不特殊讨论
+                elevators[nearestElevatorIndex].upQueue.add(outsideCurFloor);
             }
+        }
+        //如果现在没有找到合理的，当前时间点难以衡量哪部电梯最优，等会儿再找
+        else {
+            Elevator.mySleep(1000);
+            handleOutsideUpOrder(outsideCurFloor);
         }
 
     }
@@ -131,8 +139,14 @@ public class Controller {
             } else if(outsideCurFloor - elevators[nearestElevatorIndex].currentFloor < 0){
                 elevators[nearestElevatorIndex].downQueue.add(outsideCurFloor);
             } else if(outsideCurFloor - elevators[nearestElevatorIndex].currentFloor == 0) {
-                //电梯开门
+                //理由同Up按钮
+                elevators[nearestElevatorIndex].downQueue.add(outsideCurFloor);
             }
+        }
+        //如果现在没有找到合理的，当前时间点难以衡量哪部电梯最优，等会儿再找
+        else {
+            Elevator.mySleep(1000);
+            handleOutsideDownOrder(outsideCurFloor);
         }
 
     }
@@ -156,6 +170,10 @@ public class Controller {
         elevatorChoice.setValue("elevator1");
         initInsideFloorButtons();
         initOutsideOrderButtons();
+        for(int i = 1; i <= 20; i++) {
+            eachFloorDisplay[i]= (Label)root.lookup("#display"+i);
+            eachFloorDisplay[i].setText("shut");
+        }
         for(int i = 1; i <= 5; i++) {
             elevatorSliders[i] = (Slider)root.lookup("#slider"+i);
             elevatorSliders[i].setMin(1);
