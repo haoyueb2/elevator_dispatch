@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="almost complete">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="details handled">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/elevator_dispatch/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/elevator_dispatch/sample/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Elevator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -79,15 +79,15 @@
         <counts>
           <entry key="css" value="5" />
           <entry key="fxml" value="342" />
-          <entry key="java" value="5945" />
-          <entry key="txt" value="131" />
+          <entry key="java" value="6247" />
+          <entry key="txt" value="147" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="5" />
-          <entry key="JAVA" value="5945" />
-          <entry key="PLAIN_TEXT" value="131" />
+          <entry key="JAVA" value="6247" />
+          <entry key="PLAIN_TEXT" value="147" />
           <entry key="XML" value="342" />
         </counts>
       </usages-collector>
@@ -117,8 +117,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3358">
-              <caret line="146" column="14" lean-forward="true" selection-start-line="146" selection-start-column="14" selection-end-line="146" selection-end-column="14" />
+            <state relative-caret-position="3933">
+              <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,8 +129,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Elevator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+            <state relative-caret-position="-473">
+              <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#613#614#0" expanded="true" />
@@ -227,7 +227,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557222776918" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557224957159" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -366,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557160474196</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="details handled">
+      <created>1557222830321</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1557222830321</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -409,15 +416,15 @@
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="bottom" id="Style Checker" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -441,7 +448,8 @@
     <MESSAGE value="inside all and outside upOrder succeed" />
     <MESSAGE value="before change outside button" />
     <MESSAGE value="almost complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost complete" />
+    <MESSAGE value="details handled" />
+    <option name="LAST_COMMIT_MESSAGE" value="details handled" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -529,8 +537,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Elevator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        <state relative-caret-position="-473">
+          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#613#614#0" expanded="true" />
@@ -541,8 +549,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3358">
-          <caret line="146" column="14" lean-forward="true" selection-start-line="146" selection-start-column="14" selection-end-line="146" selection-end-column="14" />
+        <state relative-caret-position="3933">
+          <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

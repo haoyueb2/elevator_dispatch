@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -24,26 +22,6 @@
             <Slider fx:id="slider5" orientation="VERTICAL" />
          </children>
       </HBox>
-      <HBox layoutX="55.0" layoutY="628.0" prefHeight="32.0" prefWidth="200.0" spacing="20.0">
-         <children>
-            <Label fx:id="eleDisplay2" prefHeight="15.0" prefWidth="50.0" text="1" />
-            <Label fx:id="eleDisplay2" prefHeight="15.0" prefWidth="50.0" text="1" />
-            <Label fx:id="eleDisplay3" prefHeight="15.0" prefWidth="50.0" text="1" />
-            <Label fx:id="eleDisplay4" prefHeight="15.0" prefWidth="50.0" text="1" />
-            <Label fx:id="eleDisplay5" prefHeight="15.0" prefWidth="50.0" text="1" />
-         </children>
-      </HBox>
-      <ChoiceBox fx:id="elevatorChoice" layoutX="38.0" layoutY="67.0" prefWidth="150.0">
-          <items>
-              <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="elevator1" />
-                  <String fx:value="elevator2" />
-                  <String fx:value="elevator3" />
-                  <String fx:value="elevator4" />
-                  <String fx:value="elevator5" />
-              </FXCollections>
-          </items>
-      </ChoiceBox>
       <GridPane layoutX="20.0" layoutY="119.0" prefHeight="138.0" prefWidth="403.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -221,6 +199,40 @@
                   <Button fx:id="up1" mnemonicParsing="false" prefHeight="32.0" prefWidth="51.0" text="↑" />
                   <Button fx:id="down1" mnemonicParsing="false" prefHeight="20.0" prefWidth="50.0" text="↓" />
                   <Label fx:id="display1" prefHeight="23.0" prefWidth="77.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="55.0" layoutY="345.0" prefHeight="200.0" prefWidth="178.0">
+         <children>
+            <HBox prefHeight="32.0" prefWidth="157.0">
+               <children>
+                  <RadioButton fx:id="chooseEle1" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="elevator1" />
+                  <Label fx:id="eleDisplay1" prefHeight="27.0" prefWidth="60.0" text="1" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="157.0">
+               <children>
+                  <RadioButton fx:id="chooseEle2" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="elevator2" />
+                  <Label fx:id="eleDisplay2" prefHeight="27.0" prefWidth="60.0" text="1" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="157.0">
+               <children>
+                  <RadioButton fx:id="chooseEle3" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="elevator3" />
+                  <Label fx:id="eleDisplay3" prefHeight="27.0" prefWidth="60.0" text="1" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="157.0">
+               <children>
+                  <RadioButton fx:id="chooseEle4" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="elevator4" />
+                  <Label fx:id="eleDisplay4" prefHeight="27.0" prefWidth="60.0" text="1" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="157.0">
+               <children>
+                  <RadioButton fx:id="chooseEle5" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="elevator5" />
+                  <Label fx:id="eleDisplay5" prefHeight="27.0" prefWidth="60.0" text="1" />
                </children>
             </HBox>
          </children>

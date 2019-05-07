@@ -1,14 +1,10 @@
 package sample;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 public class Controller {
 
-    public ChoiceBox elevatorChoice;
     public AnchorPane root;
     public Button[] insideFloorButtons = new Button[21];
     public Button[] outsideUpButtons = new Button[21];
@@ -16,6 +12,8 @@ public class Controller {
     public Elevator[] elevators = new Elevator[6];
     public Slider[] elevatorSliders = new Slider[6];
     public Label[] eachFloorDisplay = new Label[21];
+    public ToggleGroup  chooseEles = new ToggleGroup();
+    public RadioButton[] allChooseEle = new RadioButton[6];
     private void initInsideFloorButtons() {
         //目的是从1到20，把0空出来
         for(int i = 1; i <= 20; i++) {
@@ -152,8 +150,12 @@ public class Controller {
     }
 
     private void handleInsideOrder(int chosenFloor) {
-        String elevatorChoiceValue = (String)elevatorChoice.getValue();
-        int elevatorIndex = elevatorChoiceValue.charAt(8)-'0';
+        int elevatorIndex =0;
+        for(int i = 1; i <= 5; i++) {
+            if(allChooseEle[i].isSelected() == true) {
+                elevatorIndex = i;
+            }
+        }
         //请求不是本层才点亮按钮
         if(elevators[elevatorIndex].currentFloor != chosenFloor) {
             insideFloorButtons[chosenFloor].setStyle("-fx-background-color:#5264AE;");
@@ -167,7 +169,12 @@ public class Controller {
         }
     }
     public void initialize() {
-        elevatorChoice.setValue("elevator1");
+
+        for(int i = 1; i <=5;i++) {
+            allChooseEle[i]=(RadioButton)root.lookup("#chooseEle"+i);
+            allChooseEle[i].setToggleGroup(chooseEles);
+        }
+        allChooseEle[1].setSelected(true);
         initInsideFloorButtons();
         initOutsideOrderButtons();
         for(int i = 1; i <= 20; i++) {
