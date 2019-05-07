@@ -15,6 +15,8 @@ public class Elevator implements Runnable {
     public final static int DOWN = 2;
     private int selfElevatorIndex;
     public int status = PAUSE;
+    //是否正在某层短暂停留，用作能否开关门的判断条件
+    public boolean isTmpStay = false;
     public PriorityQueue<Integer> upQueue ;
 
     public PriorityQueue<Integer> downQueue ;
@@ -63,8 +65,13 @@ public class Elevator implements Runnable {
         }
         //其他UI控件都在这个线程就能改变了，只有setText不可以，要让application线程去改变
         Platform.runLater(()->controller.eachFloorDisplay[currentFloor].setText(selfElevatorIndex+"号电梯open"));
+        Platform.runLater(()->controller.eachElevatorDisplay[selfElevatorIndex].setText("open"));
         mySleep(1500);
-        Platform.runLater(()->controller.eachFloorDisplay[currentFloor].setText("shut"));
+        Platform.runLater(()->controller.eachFloorDisplay[currentFloor].setText("closed"));
+
+        if(status == PAUSE) {
+            Platform.runLater(()->controller.eachElevatorDisplay[selfElevatorIndex].setText("  "+currentFloor));
+        }
     }
     private void handleOutsideOrderButtonStyle() {
         controller.insideFloorButtons[currentFloor].setStyle(null);
@@ -81,7 +88,7 @@ public class Elevator implements Runnable {
                 else if(downQueue.size() != 0) {
                     controller.outsideDownButtons[currentFloor].setStyle(null);
                 }
-                //所有任务都没有，那随便响应哪个都行，我们选择熄灭上行按钮
+                //所有任务都没有，那随便响应哪个都行，选择熄灭上行按钮
                 else {
                     controller.outsideUpButtons[currentFloor].setStyle(null);
                 }
@@ -94,7 +101,7 @@ public class Elevator implements Runnable {
                 else if(upQueue.size() != 0) {
                     controller.outsideUpButtons[currentFloor].setStyle(null);
                 }
-                //所有任务都没有，那随便响应哪个都行，我们选择熄灭下行按钮
+                //所有任务都没有，那随便响应哪个都行，选择熄灭下行按钮
                 else {
                     controller.outsideDownButtons[currentFloor].setStyle(null);
                 }
@@ -127,10 +134,13 @@ public class Elevator implements Runnable {
                     currentFloor++;
                 }
                 controller.elevatorSliders[selfElevatorIndex].setValue(currentFloor);
+                Platform.runLater(()->controller.eachElevatorDisplay[selfElevatorIndex].setText("↑ "+currentFloor));
                 if(upQueue.peek() == currentFloor) {
+                    isTmpStay = true;
                     upQueue.poll();
                     handleOutsideOrderButtonStyle();
                     openDoor();
+                    isTmpStay = false;
                 }
             }
             //细节同Up按钮，不再重复注释
@@ -142,6 +152,7 @@ public class Elevator implements Runnable {
                     currentFloor--;
                 }
                 controller.elevatorSliders[selfElevatorIndex].setValue(currentFloor);
+                Platform.runLater(()->controller.eachElevatorDisplay[selfElevatorIndex].setText("↓ "+currentFloor));
                 if(downQueue.peek() == currentFloor) {
                     downQueue.poll();
                     handleOutsideOrderButtonStyle();

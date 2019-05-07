@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
@@ -22,7 +23,7 @@
             <Slider fx:id="slider5" orientation="VERTICAL" />
          </children>
       </HBox>
-      <GridPane layoutX="20.0" layoutY="119.0" prefHeight="138.0" prefWidth="403.0">
+      <GridPane layoutX="32.0" layoutY="379.0" prefHeight="138.0" prefWidth="403.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -203,39 +204,62 @@
             </HBox>
          </children>
       </VBox>
-      <VBox layoutX="55.0" layoutY="345.0" prefHeight="200.0" prefWidth="178.0">
+      <VBox layoutX="95.0" layoutY="32.0" prefHeight="347.0" prefWidth="290.0">
          <children>
-            <HBox prefHeight="32.0" prefWidth="157.0">
+            <HBox prefHeight="65.0" prefWidth="157.0">
                <children>
-                  <RadioButton fx:id="chooseEle1" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="elevator1" />
-                  <Label fx:id="eleDisplay1" prefHeight="27.0" prefWidth="60.0" text="1" />
+                  <RadioButton fx:id="chooseEle1" mnemonicParsing="false" prefHeight="66.0" prefWidth="129.0" text="1号电梯      状态：" />
+                  <Label fx:id="eleDisplay1" prefHeight="66.0" prefWidth="124.0" text="  1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
-            <HBox prefHeight="32.0" prefWidth="157.0">
+            <HBox prefHeight="65.0" prefWidth="157.0">
                <children>
-                  <RadioButton fx:id="chooseEle2" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="elevator2" />
-                  <Label fx:id="eleDisplay2" prefHeight="27.0" prefWidth="60.0" text="1" />
+                  <RadioButton fx:id="chooseEle2" mnemonicParsing="false" prefHeight="65.0" prefWidth="129.0" text="2号电梯      状态：" />
+                  <Label fx:id="eleDisplay2" prefHeight="65.0" prefWidth="126.0" text="  1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
-            <HBox prefHeight="32.0" prefWidth="157.0">
+            <HBox prefHeight="65.0" prefWidth="157.0">
                <children>
-                  <RadioButton fx:id="chooseEle3" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="elevator3" />
-                  <Label fx:id="eleDisplay3" prefHeight="27.0" prefWidth="60.0" text="1" />
+                  <RadioButton fx:id="chooseEle3" mnemonicParsing="false" prefHeight="65.0" prefWidth="129.0" text="3号电梯      状态：" />
+                  <Label fx:id="eleDisplay3" prefHeight="65.0" prefWidth="130.0" text="  1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
-            <HBox prefHeight="32.0" prefWidth="157.0">
+            <HBox prefHeight="65.0" prefWidth="157.0">
                <children>
-                  <RadioButton fx:id="chooseEle4" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="elevator4" />
-                  <Label fx:id="eleDisplay4" prefHeight="27.0" prefWidth="60.0" text="1" />
+                  <RadioButton fx:id="chooseEle4" mnemonicParsing="false" prefHeight="65.0" prefWidth="129.0" text="4号电梯      状态：" />
+                  <Label fx:id="eleDisplay4" prefHeight="65.0" prefWidth="125.0" text="  1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
-            <HBox prefHeight="32.0" prefWidth="157.0">
+            <HBox prefHeight="65.0" prefWidth="294.0">
                <children>
-                  <RadioButton fx:id="chooseEle5" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="elevator5" />
-                  <Label fx:id="eleDisplay5" prefHeight="27.0" prefWidth="60.0" text="1" />
+                  <RadioButton fx:id="chooseEle5" mnemonicParsing="false" prefHeight="65.0" prefWidth="129.0" text="5号电梯      状态：" />
+                  <Label fx:id="eleDisplay5" prefHeight="65.0" prefWidth="122.0" text="  1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
          </children>
       </VBox>
+      <Button fx:id="open" layoutX="32.0" layoutY="543.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" text="开门" />
+      <Button fx:id="alert" layoutX="195.0" layoutY="543.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="78.0" text="报警" />
+      <Label fx:id="alertDisplay" layoutX="32.0" layoutY="579.0" prefHeight="106.0" prefWidth="160.0" />
    </children>
 </AnchorPane>

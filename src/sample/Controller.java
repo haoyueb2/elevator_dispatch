@@ -4,7 +4,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 public class Controller {
-
+    //设置为public是因为elevator要在运行中更新UI组件状态
     public AnchorPane root;
     public Button[] insideFloorButtons = new Button[21];
     public Button[] outsideUpButtons = new Button[21];
@@ -14,6 +14,11 @@ public class Controller {
     public Label[] eachFloorDisplay = new Label[21];
     public ToggleGroup  chooseEles = new ToggleGroup();
     public RadioButton[] allChooseEle = new RadioButton[6];
+    public Label[] eachElevatorDisplay = new Label[6];
+    public Button openButton = new Button();
+    public Button alert = new Button();
+    public Label alertDisplay = new Label();
+
     private void initInsideFloorButtons() {
         //目的是从1到20，把0空出来
         for(int i = 1; i <= 20; i++) {
@@ -86,7 +91,9 @@ public class Controller {
             } else if(outsideCurFloor - elevators[nearestElevatorIndex].currentFloor < 0){
                 elevators[nearestElevatorIndex].downQueue.add(outsideCurFloor);
             } else if(outsideCurFloor - elevators[nearestElevatorIndex].currentFloor == 0) {
-                //up按钮此时只可能调度到UP和PAUSE状态的电梯，UP要加入UpQueue才可以，PAUSE都行所以不特殊讨论
+                //本层楼与电梯所处楼层相同，此时up按钮起一个开门的作用，一直按的话电梯也会停在本层
+                //up按钮此时只可能调度到UP和PAUSE状态的电梯，UP状态的电梯要加入UpQueue才可以
+                //否则加入downQueue而UP状态的电梯还有任务就无法实现开门，PAUSE状态的电梯都行所以此时选择加入upQueue
                 elevators[nearestElevatorIndex].upQueue.add(outsideCurFloor);
             }
         }
@@ -168,6 +175,43 @@ public class Controller {
             elevators[elevatorIndex].downQueue.add(chosenFloor);
         }
     }
+    private void initOpenButton () {
+        openButton = (Button)root.lookup("#open");
+
+        //将本层楼加入电梯的任务队列以实现开门效果
+        openButton.setOnAction((event -> {
+            int elevatorIndex =0;
+            for(int i = 1; i <= 5; i++) {
+                if(allChooseEle[i].isSelected() == true) {
+                    elevatorIndex = i;
+                }
+            }
+            //只有当电梯到达某层暂时停留时或者在某一层长期处于PAUSE状态时才可以开关门。电梯运行状态不允许开关门
+            if(elevators[elevatorIndex].isTmpStay == true || elevators[elevatorIndex].status == Elevator.PAUSE) {
+                if (elevators[elevatorIndex].status == Elevator.UP || elevators[elevatorIndex].status == Elevator.PAUSE) {
+                    elevators[elevatorIndex].upQueue.add(elevators[elevatorIndex].currentFloor);
+                } else if (elevators[elevatorIndex].status == Elevator.DOWN) {
+                    elevators[elevatorIndex].downQueue.add(elevators[elevatorIndex].currentFloor);
+                }
+            }
+        }));
+    }
+    private void initAlertButton() {
+        alert = (Button)root.lookup("#alert");
+        alertDisplay = (Label)root.lookup("#alertDisplay");
+        alert.setOnAction((event)->{
+            int elevatorIndex =0;
+            for(int i = 1; i <= 5; i++) {
+                if(allChooseEle[i].isSelected() == true) {
+                    elevatorIndex = i;
+                }
+            }
+            if(alertDisplay.getText().length() >= 40) {
+                alertDisplay.setText("");
+            }
+            alertDisplay.setText(alertDisplay.getText()+"\n"+elevatorIndex+"号电梯发出报警！！");
+        });
+    }
     public void initialize() {
 
         for(int i = 1; i <=5;i++) {
@@ -175,11 +219,16 @@ public class Controller {
             allChooseEle[i].setToggleGroup(chooseEles);
         }
         allChooseEle[1].setSelected(true);
+        for(int i = 1; i <= 5;i++) {
+            eachElevatorDisplay[i] = (Label)root.lookup("#eleDisplay" +i);
+        }
         initInsideFloorButtons();
         initOutsideOrderButtons();
+        initOpenButton();
+        initAlertButton();
         for(int i = 1; i <= 20; i++) {
             eachFloorDisplay[i]= (Label)root.lookup("#display"+i);
-            eachFloorDisplay[i].setText("shut");
+            eachFloorDisplay[i].setText("closed");
         }
         for(int i = 1; i <= 5; i++) {
             elevatorSliders[i] = (Slider)root.lookup("#slider"+i);
