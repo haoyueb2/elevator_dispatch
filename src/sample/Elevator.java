@@ -75,41 +75,13 @@ public class Elevator implements Runnable {
     }
     private void handleOutsideOrderButtonStyle() {
         controller.insideFloorButtons[currentFloor].setStyle(null);
-        //讨论只针对某一层上行下行按钮都按下了情况，此时我们必定会调度两台电梯来，所以熄灭按钮有先后顺序
-        //也代表了我们的电梯响应的是何种请求，也指示了发送何种请求的乘客可以上电梯
-        //注意比较不能用null，要用空字符串
-        if(controller.outsideUpButtons[currentFloor].getStyle()!= "" &&
-                controller.outsideDownButtons[currentFloor].getStyle()!="") {
-            if(status == UP) {
-                if(upQueue.size() != 0 ) {
-                    controller.outsideUpButtons[currentFloor].setStyle(null);
-                }
-                //没有上行任务，但有下行任务
-                else if(downQueue.size() != 0) {
-                    controller.outsideDownButtons[currentFloor].setStyle(null);
-                }
-                //所有任务都没有，那随便响应哪个都行，选择熄灭上行按钮
-                else {
-                    controller.outsideUpButtons[currentFloor].setStyle(null);
-                }
-            }
-            else if(status == DOWN) {
-                if(downQueue.size() != 0 ) {
-                    controller.outsideDownButtons[currentFloor].setStyle(null);
-                }
-                //没有下行任务，但有上行任务
-                else if(upQueue.size() != 0) {
-                    controller.outsideUpButtons[currentFloor].setStyle(null);
-                }
-                //所有任务都没有，那随便响应哪个都行，选择熄灭下行按钮
-                else {
-                    controller.outsideDownButtons[currentFloor].setStyle(null);
-                }
-            }
-        }
-        else {
-            controller.outsideUpButtons[currentFloor].setStyle(null);
+       if(controller.eachFloorTarget[currentFloor].upButtonTarget == selfElevatorIndex) {
+           controller.outsideUpButtons[currentFloor].setStyle(null);
+           controller.eachFloorTarget[currentFloor].upButtonTarget = 0;
+       }
+        if(controller.eachFloorTarget[currentFloor].downButtonTarget == selfElevatorIndex) {
             controller.outsideDownButtons[currentFloor].setStyle(null);
+            controller.eachFloorTarget[currentFloor].downButtonTarget = 0;
         }
     }
     @Override
@@ -154,9 +126,11 @@ public class Elevator implements Runnable {
                 controller.elevatorSliders[selfElevatorIndex].setValue(currentFloor);
                 Platform.runLater(()->controller.eachElevatorDisplay[selfElevatorIndex].setText("↓ "+currentFloor));
                 if(downQueue.peek() == currentFloor) {
+                    isTmpStay = true;
                     downQueue.poll();
                     handleOutsideOrderButtonStyle();
                     openDoor();
+                    isTmpStay = false;
                 }
             }
             status = PAUSE;

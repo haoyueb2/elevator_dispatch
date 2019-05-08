@@ -3,6 +3,8 @@ package sample;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
+
+
 public class Controller {
     //设置为public是因为elevator要在运行中更新UI组件状态
     public AnchorPane root;
@@ -18,7 +20,11 @@ public class Controller {
     public Button openButton = new Button();
     public Button alert = new Button();
     public Label alertDisplay = new Label();
-
+    public class targetElevator {
+        public int upButtonTarget = 0;
+        public int downButtonTarget = 0;
+    }
+    public targetElevator[] eachFloorTarget= new targetElevator[21];
     private void initInsideFloorButtons() {
         //目的是从1到20，把0空出来
         for(int i = 1; i <= 20; i++) {
@@ -63,11 +69,13 @@ public class Controller {
             outsideUpButtons[outsideCurFloor].setStyle("-fx-background-color:#B0E0E6;");
         }
         int nearestElevatorIndex = 0;
-        int minDistance = 100;//先设一个很大的数
+        int minDistance = 100;//先设一个很大的数]
+        //下降按钮已经调度了的电梯不考虑
+        int busyElevator = eachFloorTarget[outsideCurFloor].downButtonTarget;
         //先在up里边找，是如果Up和Pause的电梯离楼层距离相等时，优先调度Up状态的
         for(int i = 1; i <= 5; i++) {
             //由于只要有待处理的上升楼层电梯就是上升状态，所以楼层相等时Up的楼层也得开
-            if(elevators[i].status == Elevator.UP && elevators[i].currentFloor<= outsideCurFloor) {
+            if(i!= busyElevator && elevators[i].status == Elevator.UP && elevators[i].currentFloor<= outsideCurFloor) {
                 int distance = outsideCurFloor - elevators[i].currentFloor;
                 if(distance < minDistance) {
                     minDistance = distance;
@@ -96,6 +104,7 @@ public class Controller {
                 //否则加入downQueue而UP状态的电梯还有任务就无法实现开门，PAUSE状态的电梯都行所以此时选择加入upQueue
                 elevators[nearestElevatorIndex].upQueue.add(outsideCurFloor);
             }
+            eachFloorTarget[outsideCurFloor].upButtonTarget = nearestElevatorIndex;
         }
         //如果现在没有找到合理的，当前时间点难以衡量哪部电梯最优，等会儿再找
         else {
@@ -117,10 +126,13 @@ public class Controller {
         }
         int nearestElevatorIndex = 0;
         int minDistance = 100;//先设一个很大的数
+        //上行按钮已经调度的电梯不考虑
+        int busyElevator = eachFloorTarget[outsideCurFloor].upButtonTarget;
         //先在Down里边找，是如果Down和Pause的电梯离楼层距离相等时，优先调度Down状态的
+
         for(int i = 1; i <= 5; i++) {
-            //由于只要有待处理的上升楼层电梯就是上升状态，所以楼层相等时Down的楼层也得开
-            if(elevators[i].status == Elevator.DOWN && elevators[i].currentFloor>= outsideCurFloor) {
+            //由于只要有待处理的下降电梯就是下降状态，所以楼层相等时Down的楼层也得开
+            if(i!= busyElevator && elevators[i].status == Elevator.DOWN && elevators[i].currentFloor>= outsideCurFloor) {
                 int distance = elevators[i].currentFloor - outsideCurFloor;
                 if(distance < minDistance) {
                     minDistance = distance;
@@ -147,6 +159,7 @@ public class Controller {
                 //理由同Up按钮
                 elevators[nearestElevatorIndex].downQueue.add(outsideCurFloor);
             }
+            eachFloorTarget[outsideCurFloor].downButtonTarget = nearestElevatorIndex;
         }
         //如果现在没有找到合理的，当前时间点难以衡量哪部电梯最优，等会儿再找
         else {
@@ -226,6 +239,9 @@ public class Controller {
         initOutsideOrderButtons();
         initOpenButton();
         initAlertButton();
+        for(int i = 1; i <= 20; i++) {
+            eachFloorTarget[i] = new targetElevator();
+        }
         for(int i = 1; i <= 20; i++) {
             eachFloorDisplay[i]= (Label)root.lookup("#display"+i);
             eachFloorDisplay[i].setText("closed");
