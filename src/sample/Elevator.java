@@ -21,7 +21,7 @@ public class Elevator implements Runnable {
 
     public PriorityQueue<Integer> downQueue ;
     private Controller controller;
-    //消除重复，有重复的话很可能导致电梯持续运行到顶或底
+
     private class MyPriQueue<E> extends PriorityQueue<E> {
         MyPriQueue() {
             super();
