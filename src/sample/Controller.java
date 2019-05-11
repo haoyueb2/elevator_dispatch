@@ -69,7 +69,7 @@ public class Controller {
             outsideUpButtons[outsideCurFloor].setStyle("-fx-background-color:#B0E0E6;");
         }
         int nearestElevatorIndex = 0;
-        int minDistance = 100;//先设一个很大的数]
+        int minDistance = 100;//先设一个很大的数
         //下降按钮已经调度了的电梯不考虑
         int busyElevator = eachFloorTarget[outsideCurFloor].downButtonTarget;
         //先在up里边找，是如果Up和Pause的电梯离楼层距离相等时，优先调度Up状态的
