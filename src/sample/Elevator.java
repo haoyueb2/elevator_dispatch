@@ -55,6 +55,7 @@ public class Elevator implements Runnable {
         }
         catch(Exception exc){
             System.out.println("sleep exception!!");
+
         }
     }
     public void openDoor() {

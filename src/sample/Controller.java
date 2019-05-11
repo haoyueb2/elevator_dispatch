@@ -258,7 +258,9 @@ public class Controller {
         }
         for(int i = 1; i <= 5;i++){
             elevators[i] = new Elevator(i, this);
-            new Thread(elevators[i]).start();
+            Thread tmp = new Thread(elevators[i]);
+            tmp.setDaemon(true);
+            tmp.start();
         }
     }
 
