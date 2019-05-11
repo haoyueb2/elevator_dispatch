@@ -57,3 +57,4 @@ typora-copy-images-to: image
 
 # Controller类
 
+Controller类其实本来是idea创建javafx application是自动生成的，也是定义界面的fxml文件绑定的控制器，fxml文件里每个拥有fx:id的UI组件在Controller里都有对应的属性变量
